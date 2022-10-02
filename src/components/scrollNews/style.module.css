@@ -1,0 +1,37 @@
+.general_wrapper {
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+}
+.wrapper {
+  margin-top: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.itemWrapper {
+  width: 340px;
+  height: 195px;
+}
+.itemWrapper img {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 410px;
+  height: 220px;
+}
+.itemWrapper p {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.innerItems {
+  line-height: 1px;
+  display: flex;
+  padding-top: -10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+.title {
+  width: 60%;
+  padding-bottom: 0px;
+}

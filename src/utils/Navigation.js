@@ -1,11 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFoundPage from "../pages/NotFoundPage";
+import MainPage from "pages/mainPage";
+import ListDataPage from "pages/listDataPage";
+import AddDataPage from "pages/addDataPage";
 
 const Navigation = () => {
   return (
-    <div>
-      <p>burası navigation kısımıdır haa</p>
-      <NotFoundPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/listdata" element={<ListDataPage />} />
+        <Route path="/savedata" element={<AddDataPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
   );
 };
 

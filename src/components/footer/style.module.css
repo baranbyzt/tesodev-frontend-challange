@@ -1,0 +1,59 @@
+.wrapper {
+  background-color: rgba(41, 78, 152, 0.72);
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 27.5px;
+  padding-bottom: 27.5px;
+  margin-top: 80px;
+}
+
+.wrapper img {
+  height: 179.5px;
+  width: 217.42px;
+}
+
+.info_section {
+  display: flex;
+  position: relative;
+}
+.content {
+  width: 424px;
+  height: 171px;
+  margin-left: 27.5px;
+}
+.content p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+}
+.content h3 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 21px;
+  margin-bottom: 0;
+}
+.content a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration-line: none;
+  line-height: 21px;
+}
+.maps_section {
+  width: 467px;
+  height: 222px;
+  margin-left: 25px;
+  border: 0.1rem solid white;
+}

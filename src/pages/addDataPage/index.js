@@ -1,5 +1,7 @@
+import AddData from "components/addData";
+
 const AddDataPage = () => {
-  return <div>this is add-date-page</div>;
+  return <AddData />;
 };
 
 export default AddDataPage;
