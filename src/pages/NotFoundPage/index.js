@@ -1,5 +1,7 @@
+import style from "./style.module.css";
+
 const NotFoundPage = () => {
-  return <>this is not found</>;
+  return <div className={style.wrapper}>404</div>;
 };
 
 export default NotFoundPage;
