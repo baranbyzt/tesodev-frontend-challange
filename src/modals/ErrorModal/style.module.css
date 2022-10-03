@@ -1,0 +1,21 @@
+.modal {
+  position: absolute;
+  width: 375px;
+  height: auto;
+  left: 50px;
+  bottom: 50px;
+  background: #c4c4c4;
+  border-radius: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 18px;
+}
+
+.close {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
