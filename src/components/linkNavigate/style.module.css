@@ -1,0 +1,21 @@
+.wrapper {
+  width: 197.16px;
+  height: 46px;
+  background: #204080;
+  color: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 64px;
+  right: 64px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}

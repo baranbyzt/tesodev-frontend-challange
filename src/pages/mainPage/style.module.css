@@ -1,4 +1,13 @@
 .wrapper {
   width: 100%;
   min-height: 100%;
+  position: relative;
+}
+.main_icon {
+  position: absolute;
+  top: -180px;
+  left: 800px;
+}
+.input_section {
+  margin-top: 320px;
 }
