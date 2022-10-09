@@ -2,8 +2,8 @@
   position: absolute;
   width: 375px;
   min-height: 125px;
-  right: 30px;
-  bottom: 30px;
+  right: 10px;
+  bottom: 10px;
   background: #c4c4c4;
   border-radius: 8px;
   padding-left: 18px;
@@ -29,6 +29,9 @@
   font-size: 17px;
 }
 .error_message_wrapper {
+  padding-top: 10px;
+}
+.error_message_wrapper p:first-child {
   padding-top: 10px;
 }
 .error_message_wrapper p {

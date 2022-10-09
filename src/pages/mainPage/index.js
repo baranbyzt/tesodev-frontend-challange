@@ -16,9 +16,18 @@ const MainPage = () => {
       <LinkNavigate />
       <div className={style.wrapper}>
         <div className={style.input_section}>
-          <img className={style.main_icon} src={tesodevImage} />
-          <SearchInput />
-          {getEditedValue[0] !== undefined ? <BasicListData /> : <p></p>}
+          <div className={style.image_wrapper}>
+            <img src={tesodevImage} />
+          </div>
+          <div className={style.page_title}>
+            <h3>Find in Records</h3>
+            <SearchInput />
+          </div>
+          {getEditedValue[0] !== undefined ? (
+            <BasicListData />
+          ) : (
+            <p className={style.null_section}>...</p>
+          )}
           <SckrollNews />
           <Footer />
         </div>

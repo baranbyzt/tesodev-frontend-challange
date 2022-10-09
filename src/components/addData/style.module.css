@@ -1,5 +1,6 @@
 .wrapper {
-  height: 45rem;
+  height: 670px;
+  margin-right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +14,8 @@
   left: 20px;
 }
 .menu_icon {
-  width: 180px;
-  height: 80px;
+  width: 149px;
+  height: 63px;
 }
 .link_wrapper {
   display: flex;

@@ -24,10 +24,10 @@ const ErrorModal = ({ nameSurname, country, city, email }) => {
         <p>Error</p>
       </div>
       <div className={style.error_message_wrapper}>
-        <p>{nameSurname ? null : "name must be between 6 and 60"}</p>
-        <p>{country ? null : "name must be between 4 and 40"}</p>
-        <p>{city ? null : "name must be between 4 and 40"}</p>
-        <p>{email ? null : "name must be true"}</p>
+        <p>{country ? null : "Country must be between 4 and 40"}</p>
+        <p>{city ? null : "city must be between 4 and 40"}</p>
+        <p>{email ? null : "email must be true"}</p>
+        <p>{nameSurname ? null : "Name & Surname must be between 6 and 60"}</p>
       </div>
     </div>,
     document.getElementById("error-modal-root")

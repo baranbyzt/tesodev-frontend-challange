@@ -14,13 +14,22 @@
 }
 
 .wrapper img {
-  height: 179.5px;
   width: 217.42px;
+  height: 179.5px;
 }
 
 .info_section {
   display: flex;
   position: relative;
+}
+.info_section p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  padding-bottom: 20px;
+  line-height: 21px;
+  color: #ffffff;
 }
 .content {
   width: 424px;
@@ -30,22 +39,22 @@
 .content p {
   font-family: "Roboto";
   font-style: normal;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 21px;
 }
 .content h3 {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 900;
   line-height: 21px;
-  margin-bottom: 0;
+  margin-bottom: -5px;
 }
 .content a {
   font-family: "Roboto";
   font-style: normal;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: white;
   text-decoration-line: none;
