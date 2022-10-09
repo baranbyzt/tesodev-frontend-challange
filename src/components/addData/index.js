@@ -20,69 +20,55 @@ const AddData = () => {
   const [city, setCity] = useState(null);
   const [email, setEmail] = useState(null);
 
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  const [nameSurname1, setNameSurname1] = useState(null);
-  const [country1, setCountry1] = useState(null);
-  const [city1, setCity1] = useState(null);
-  const [email1, setEmail1] = useState(null);
-
-  let navigate = useNavigate();
+  const [nameSurnameValue, setNameSurnameValue] = useState(null);
+  const [countryValue, setCountryValue] = useState(null);
+  const [cityValue, setCityValue] = useState(null);
+  const [emailValue, setEmailValue] = useState(null);
 
   let emailStyle = document.getElementById("email_id");
   let countryStyle = document.getElementById("country_id");
   let cityStyle = document.getElementById("city_id");
   let nameStyle = document.getElementById("name_id");
+  let navigate = useNavigate();
+
+  const defaultColor = "#686868";
+  const errorColor = "rgba(255, 0, 0, 0.7)";
 
   const handleChangeNameSurname = (e) => {
     setNameSurname(nameSurnameControl(e.target.value));
-    setNameSurname1(e.target.value);
+    setNameSurnameValue(e.target.value);
 
-    nameSurnameControl(e.target.value)
-      ? setStyleControl("#686868")
-      : setStyleControl("rgba(255, 0, 0, 0.7)");
+    nameSurname ? setStyleControl(defaultColor) : setStyleControl(errorColor);
 
     nameStyle.style.color = `${styleControl}`;
   };
   const handleChangeCountry = (e) => {
     setCountry(countryControl(e.target.value));
-    setCountry1(e.target.value);
+    setCountryValue(e.target.value);
 
-    countryControl(e.target.value)
-      ? setStyleControl("#686868")
-      : setStyleControl("rgba(255, 0, 0, 0.7)");
+    country ? setStyleControl(defaultColor) : setStyleControl(errorColor);
 
     countryStyle.style.color = `${styleControl}`;
   };
   const handleChangeCity = (e) => {
     setCity(cityControl(e.target.value));
-    setCity1(e.target.value);
+    setCityValue(e.target.value);
 
-    cityControl(e.target.value)
-      ? setStyleControl("#686868")
-      : setStyleControl("rgba(255, 0, 0, 0.7)");
+    city ? setStyleControl(defaultColor) : setStyleControl(errorColor);
 
     cityStyle.style.color = `${styleControl}`;
   };
   const handleChangeEmail = (e) => {
-    setEmail1(e.target.value);
+    setEmailValue(e.target.value);
     setEmail(emailControl(e.target.value));
 
-    emailControl(e.target.value)
-      ? setStyleControl("#686868")
-      : setStyleControl("rgba(255, 0, 0, 0.7)");
-
+    email ? setStyleControl(defaultColor) : setStyleControl(errorColor);
     emailStyle.style.color = `${styleControl}`;
   };
-
   const addBtn = () => {
     let modal_root = document.getElementById("error-modal-root");
-    let mixdata = { nameSurname1, country1, city1, email1 };
-
-    nameSurname && country && city && email
-      ? SaveData(mixdata)
-      : setErrorMessage(email);
-
+    let mixdata = { nameSurnameValue, countryValue, cityValue, emailValue };
+    nameSurname && country && city && email ? SaveData(mixdata) : console.log();
     modal_root.style.visibility = "visible";
   };
 

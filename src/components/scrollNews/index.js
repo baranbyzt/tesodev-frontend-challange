@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import style from "./style.module.css";
+import NewsItem from "./NewsItem";
+import { SampleNextArrow, SamplePrevArrow } from "./CustomSlider";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,19 +14,17 @@ const ScrollNews = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
   return (
     <div className={style.general_wrapper}>
+      <h3>Top News</h3>
       <div className={style.wrapper}>
         <Slider {...settings}>
-          {jsonData.news.map((element) => (
-            <div className={style.itemWrapper}>
-              <img src={element.newsimage} />
-              <p className={style.title}>{element.newstitle}</p>
-              <div className={style.innerItems}>
-                <p>{element.date}</p>
-                <p>{element.newsaurhor}</p>
-              </div>
+          {jsonData.news.map((element, index) => (
+            <div key={index}>
+              <NewsItem data={element} />
             </div>
           ))}
         </Slider>

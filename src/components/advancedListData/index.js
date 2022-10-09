@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination";
-import Posts from "./ListSection";
+import ListSection from "./ListSection";
 import updown from "assets/svg/updown.svg";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,14 +14,14 @@ function AdvancedListData() {
   const [show, setShow] = useState(false);
   let dispatch = useDispatch();
 
-  useEffect(() => {
-    setPosts(getEditedValue);
-  }, [getEditedValue]);
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const howManyPages = Math.ceil(posts.length / postsPerPage);
+
+  useEffect(() => {
+    setPosts(getEditedValue);
+  }, [getEditedValue]);
 
   let orderBtnControl = () => {
     show ? setShow(false) : setShow(true);
@@ -47,29 +47,10 @@ function AdvancedListData() {
     await repeatedDispatch(arr.sort());
   };
 
-  let babageldi = (ghg) => {
-    let arr = [];
-    ghg.map((val) =>
-      arr.push([val[0], val[1], val[2], val[3], val[4], val[5]])
-    );
-
-    dispatch(setEditedMockData(arr.sort().reverse()));
-    return arr.sort().reverse();
-  };
-  let babageldi2 = (ghg) => {
-    let arr = [];
-    ghg.map((val) =>
-      arr.push([val[0], val[1], val[2], val[3], val[4], val[5]])
-    );
-
-    dispatch(setEditedMockData(arr.sort()));
-    return arr.sort();
-  };
-
   return (
     <div className="list-data-container">
       <div>
-        <Posts posts={currentPosts} />
+        <ListSection data={currentPosts} />
         <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
       </div>
 
