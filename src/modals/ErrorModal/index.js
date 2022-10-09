@@ -1,46 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import closeSvg from "assets/svg/close.svg";
 import style from "./style.module.css";
 
-const ErrorModal = ({ php1, php2, php3, php4 }) => {
-  const [emailCheck, setEmailCheck] = useState(null);
+const ErrorModal = ({ nameSurname, country, city, email }) => {
   let modal_root = document.getElementById("error-modal-root");
-
-  let titles;
-  if (php4 == true) {
-    titles = "email doğru girilmiştir.";
-  } else if (php4 == false) {
-    titles = "email hatalıdır girilmiştir.";
-  } else {
-    titles = "veri gelmedi --> null";
-  }
-
-  // if (data[3] === null) {
-  //   console.log("email gelmedi");
-  // } else if (data[3] === true) {
-  //   console.log("adam email'i doğru girdi");
-  // } else if (data[3] === false) {
-  //   console.log("adam email'i doğru girdi");
-  // }
 
   let closeBtn = () => {
     modal_root.style.visibility = "hidden";
   };
+
   useEffect(() => {
-    modal_root.style.visibility = "hidden";
-  }, []);
+    nameSurname && country && city && email == false
+      ? (modal_root.style.visibility = "hidden")
+      : (modal_root.style.visibility = "visible");
+  }, [nameSurname, country, city, email]);
 
   return createPortal(
     <div id="close" className={style.modal}>
       <img onClick={closeBtn} className={style.close} src={closeSvg} />
-      <p>you have a Error Message</p>
-      <hr />
-      {/* <p>name surname : {php1 ?? "sadf"}</p>
-      <p>country : {php2}</p>
-      <p>city : {php3}</p>
-      <p> email : {php4}</p> */}
-      <p>{titles}</p>
+      <p className={style.error_title}>you have Error Message</p>
+      <div className={style.error_message}>
+        <p>Error</p>
+      </div>
+      <div className={style.error_message_wrapper}>
+        <p>{nameSurname ? null : "name must be between 6 and 60"}</p>
+        <p>{country ? null : "name must be between 4 and 40"}</p>
+        <p>{city ? null : "name must be between 4 and 40"}</p>
+        <p>{email ? null : "name must be true"}</p>
+      </div>
     </div>,
     document.getElementById("error-modal-root")
   );

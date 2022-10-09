@@ -13,7 +13,7 @@ import {
 } from "utils/InputControls";
 
 const AddData = () => {
-  const [emailStyleControl, setEmailStyleControl] = useState(null);
+  const [styleControl, setStyleControl] = useState(null);
 
   const [nameSurname, setNameSurname] = useState(null);
   const [country, setCountry] = useState(null);
@@ -39,47 +39,45 @@ const AddData = () => {
     setNameSurname1(e.target.value);
 
     nameSurnameControl(e.target.value)
-      ? setEmailStyleControl("#686868")
-      : setEmailStyleControl("rgba(255, 0, 0, 0.7)");
+      ? setStyleControl("#686868")
+      : setStyleControl("rgba(255, 0, 0, 0.7)");
 
-    nameStyle.style.color = `${emailStyleControl}`;
+    nameStyle.style.color = `${styleControl}`;
   };
   const handleChangeCountry = (e) => {
     setCountry(countryControl(e.target.value));
     setCountry1(e.target.value);
 
     countryControl(e.target.value)
-      ? setEmailStyleControl("#686868")
-      : setEmailStyleControl("rgba(255, 0, 0, 0.7)");
+      ? setStyleControl("#686868")
+      : setStyleControl("rgba(255, 0, 0, 0.7)");
 
-    countryStyle.style.color = `${emailStyleControl}`;
+    countryStyle.style.color = `${styleControl}`;
   };
   const handleChangeCity = (e) => {
     setCity(cityControl(e.target.value));
     setCity1(e.target.value);
 
     cityControl(e.target.value)
-      ? setEmailStyleControl("#686868")
-      : setEmailStyleControl("rgba(255, 0, 0, 0.7)");
+      ? setStyleControl("#686868")
+      : setStyleControl("rgba(255, 0, 0, 0.7)");
 
-    cityStyle.style.color = `${emailStyleControl}`;
+    cityStyle.style.color = `${styleControl}`;
   };
   const handleChangeEmail = (e) => {
     setEmail1(e.target.value);
     setEmail(emailControl(e.target.value));
 
     emailControl(e.target.value)
-      ? setEmailStyleControl("#686868")
-      : setEmailStyleControl("rgba(255, 0, 0, 0.7)");
+      ? setStyleControl("#686868")
+      : setStyleControl("rgba(255, 0, 0, 0.7)");
 
-    emailStyle.style.color = `${emailStyleControl}`;
+    emailStyle.style.color = `${styleControl}`;
   };
 
   const addBtn = () => {
     let modal_root = document.getElementById("error-modal-root");
     let mixdata = { nameSurname1, country1, city1, email1 };
-    // let errorList = [nameSurname, country, city, email];
-    // let deneme = email1;
 
     nameSurname && country && city && email
       ? SaveData(mixdata)
@@ -142,18 +140,26 @@ const AddData = () => {
             onChange={handleChangeEmail}
           />
         </div>
-        <div className={style.add_btn} onClick={addBtn}>
-          <p>Add</p>
-        </div>
+        {email && city && country && nameSurname ? (
+          <>
+            <div className={style.add_btn} onClick={addBtn}>
+              <p>Add</p>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
       </div>
-      {/* <Modal data={errorMessage} /> */}
-      <Modal
-        // data={errorMessage}
-        php1={nameSurname}
-        php2={country}
-        php3={city}
-        php4={email}
-      />
+      {!(email && city && country && nameSurname) ? (
+        <Modal
+          nameSurname={nameSurname}
+          country={country}
+          city={city}
+          email={email}
+        />
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 };
