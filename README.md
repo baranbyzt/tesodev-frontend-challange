@@ -1,6 +1,15 @@
-### install:
-1) npm i
-2) npm start
+  Install tesodev-frontend-challange with npm
+```bash
+  cd tesodev-frontend-challange
+
+  npm install 
+  npm start
+```
+   
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.baranbeyazit.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/baran-beyazit/)
+
 
 ### live:
 https://tesodev-frontend-challange-kohl.vercel.app/
