@@ -13,7 +13,7 @@
 
 ### live:
 https://tesodev-frontend-challange-kohl.vercel.app/
-
+!!! This project does not support responsive design !!!
 
 ### about the project
 In this project, it is a frontend test case that is divided into certain parts.
